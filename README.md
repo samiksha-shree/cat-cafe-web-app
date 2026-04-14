@@ -1,0 +1,2 @@
+# cat-cafe-web-app
+A cat café web app to browse, favorite, and reserve visits with adoptable cats.
