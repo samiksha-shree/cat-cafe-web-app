@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Purr & Pour — Cat Café</title>
+<link href="style.css" rel="stylesheet" >
+</head>
+<body>
+<div id="react-fav-widget"></div>
+<header>
+<div class="brand">
+    <div class="logo">P&amp;P</div>
+    <div>
+    <div style="font-weight:800">Purr &amp; Pour</div>
+    <div class="small">Cat café &amp; cozy pastries</div>
+    </div>
+</div>
+<nav>
+    <a href="#cats">Cats/Dogs</a>
+    <a href="#reserve">Reserve</a>
+    <a href="#about">About</a>
+    <button class="btn" id="view-favs">Favorites <span id="fav-count" style="margin-left:8px" class="badge">0</span></button>
+</nav>
+</header>
+
+<main class="container">
+<section class="hero">
+    <div class="intro card">
+    <h1>Meet our adoptable purr-friends</h1>
+    <p>Welcome to Purr &amp; Pour — a small cat café where you can sip, relax and meet friendly felines. Browse cats, filter by temperament, and reserve a time-slot to visit.</p>
+    <div class="cta">
+        <button class="btn" id="scroll-cats">Browse Cats</button>
+        <button class="btn ghost" id="open-reserve">Reserve a table</button>
+    </div>
+    <hr style="margin:18px 0">
+    <div class="small">Open daily 10:00 — 20:00 · Walk-ins welcome · Events on weekends</div>
+    </div>
+
+    <aside class="card aside">
+    <h3>Today's special</h3>
+    <p class="small">Vanilla almond latte + catnip cookie — Recommended by Momo 🐱</p>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <div class="badge">Cat Cuddles</div>
+        <div class="badge">Open Mic</div>
+        <div class="badge">Adoption Drive</div>
+    </div>
+    </aside>
+</section>
+
+<!-- Search & Filters -->
+<section id="cats">
+    <div class="card">
+    <div class="controls">
+        <div class="search">
+        <input id="search" placeholder="Search by name, color or personality..." />
+        </div>
+        <div class="filters">
+        <button class="chip" data-filter="all">All</button>
+        <button class="chip" data-filter="playful">Playful</button>
+        <button class="chip" data-filter="calm">Calm</button>
+        <button class="chip" data-filter="shy">Shy</button>
+        <button class="chip" data-filter="senior">Senior</button>
+        </div>
+    </div>
+
+    <div id="cat-grid" class="grid" aria-live="polite">
+    </div>
+    </div>
+</section>
+
+<section id="reserve" style="margin-top:20px">
+    <div class="card">
+    <h3>Reserve your visit</h3>
+    <form id="reserve-form">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+        <input type="text" id="r-name" placeholder="Your name" required />
+        <input type="email" id="r-email" placeholder="Email" required />
+        <input type="date" id="r-date" required />
+        <input type="time" id="r-time" required />
+        </div>
+        <div style="margin-top:8px">
+        <label for="r-notes" class="small">Notes (allergies, preferred cat)</label>
+        <textarea id="r-notes" rows="3" style="width:100%;padding:8px;border-radius:8px;border:1px solid #eee"></textarea>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="btn" type="submit">Book visit</button>
+        <div id="reserve-msg" class="small" aria-live="polite"></div>
+        </div>
+    </form>
+    </div>
+</section>
+
+<div id="modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal card" id="modal-content">
+
+    </div>
+</div>
+
+<footer>
+    
+    <div>@ Purr &amp; Pour · Built with love — Samiksha Shree</div>
+    <span>Email:purr&pour@gmail.com</span>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
